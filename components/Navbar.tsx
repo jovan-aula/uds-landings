@@ -13,7 +13,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="fixed top-[44px] left-0 right-0 z-50 bg-white border-b border-[#EAF1FB] shadow-sm">
+    <nav className="fixed top-[40px] left-0 right-0 z-50 bg-white border-b border-[#EAF1FB] shadow-sm">
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between gap-6">
         {/* Logo */}
         <a href="/" className="shrink-0">
