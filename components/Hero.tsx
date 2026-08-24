@@ -34,19 +34,19 @@ export default function Hero() {
               </span>
             </motion.div>
 
-            {/* H1 — líneas balanceadas */}
+            {/* H1 — message match campaña */}
             <motion.h1
               {...fade(0.1)}
               className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#173257] leading-tight mb-4"
             >
               Estudia Derecho en línea
               <br />
-              <span className="text-[#26529C]">y ejerce a nivel nacional.</span>
+              <span className="text-[#26529C]">sin dejar de trabajar.</span>
             </motion.h1>
 
             <motion.p {...fade(0.2)} className="text-base text-[#222B3A]/80 mb-2 leading-relaxed max-w-md">
-              A tu ritmo, en tu tiempo. Con el respaldo de{" "}
-              <strong className="text-[#173257]">47 años de tradición</strong> y atención personalizada en cada paso.
+              A tu ritmo, sin horarios fijos. Compatible con tu trabajo, tu familia y tu vida real.{" "}
+              <strong className="text-[#173257]">47 años formando profesionistas</strong> con atención personalizada en cada paso.
             </motion.p>
 
             <motion.p {...fade(0.25)} className="text-sm font-bold text-[#26529C] mb-8">
