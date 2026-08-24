@@ -6,7 +6,7 @@ import Image from "next/image";
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6, delay, ease: "easeOut" },
+  transition: { duration: 0.6, delay, ease: "easeOut" as const },
 });
 
 export default function Hero() {
@@ -101,7 +101,7 @@ export default function Hero() {
             >
               <motion.div
                 animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" as const, delay: 1 }}
                 className="bg-white rounded-2xl shadow-xl px-4 py-3 border border-[#EAF1FB]"
               >
                 <p className="text-xs text-[#222B3A]/60 font-medium">Beca disponible</p>
