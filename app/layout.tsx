@@ -4,6 +4,10 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "UDS · Mi Universidad",
   description: "Formación con propósito, impacto que trasciende.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({

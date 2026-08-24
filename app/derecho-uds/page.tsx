@@ -27,10 +27,16 @@ export const metadata: Metadata = {
     title: "Licenciatura en Derecho en Línea | UDS Mi Universidad",
     description:
       "Estudia Derecho 100% en línea en 3 años. Título y cédula con validez oficial en todo México. Sin dejar de trabajar.",
-    url: "https://uds.edu.mx/derecho",
+    url: "https://demo.aulaconsultoria.mx/derecho-uds",
     siteName: "UDS Mi Universidad",
     locale: "es_MX",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Licenciatura en Derecho en Línea | UDS Mi Universidad",
+    description:
+      "Estudia Derecho 100% en línea en 3 años. Título y cédula con validez oficial en todo México.",
   },
 };
 
