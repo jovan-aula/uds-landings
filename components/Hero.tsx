@@ -71,13 +71,6 @@ export default function Hero() {
               </a>
             </motion.div>
 
-            {/* Urgencia inline */}
-            <motion.div {...fade(0.4)} className="mt-6 flex items-center gap-2 justify-center lg:justify-start">
-              <span className="w-2 h-2 rounded-full bg-[#A2C049] animate-pulse shrink-0" />
-              <span className="text-xs text-[#222B3A]/60 font-medium">
-                Cerramos inscripciones el <strong className="text-[#173257]">21 de septiembre</strong>
-              </span>
-            </motion.div>
           </div>
 
           {/* Imagen — derecha, pegada abajo */}
