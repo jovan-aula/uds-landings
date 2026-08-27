@@ -39,24 +39,44 @@ export default function Hero({ data }: Props) {
               </span>
             </motion.div>
 
-            {/* H1 — message match campaña */}
-            <motion.h1
-              {...fade(0.1)}
-              className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#173257] leading-tight mb-4"
-            >
+            {/* H1 — jerarquía editorial: eyebrow → programa → gancho */}
+            <motion.h1 {...fade(0.1)} className="mb-4 w-full">
               {(() => {
                 if (data.h1Line1.startsWith("Estudia ") && data.h1Line1.endsWith(" en línea")) {
                   const programa = data.h1Line1.slice(8, -9);
-                  return <>Estudia <span className="text-[#A2C049]">{programa}</span> en línea</>;
+                  return (
+                    <>
+                      <span className="block text-sm font-semibold text-[#173257]/50 uppercase tracking-widest mb-1">
+                        Estudia en línea
+                      </span>
+                      <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
+                        {programa}
+                      </span>
+                    </>
+                  );
                 }
                 if (data.h1Line1.startsWith("Especialízate en ")) {
                   const programa = data.h1Line1.slice(17);
-                  return <>Especialízate en <span className="text-[#A2C049]">{programa}</span></>;
+                  return (
+                    <>
+                      <span className="block text-sm font-semibold text-[#173257]/50 uppercase tracking-widest mb-1">
+                        Especialízate en línea
+                      </span>
+                      <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
+                        {programa}
+                      </span>
+                    </>
+                  );
                 }
-                return data.h1Line1;
+                return (
+                  <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
+                    {data.h1Line1}
+                  </span>
+                );
               })()}
-              <br />
-              <span className="text-[#26529C]">{data.h1Line2}</span>
+              <span className="block text-lg sm:text-xl font-bold text-[#26529C] leading-snug">
+                {data.h1Line2}
+              </span>
             </motion.h1>
 
             <motion.p {...fade(0.2)} className="text-base text-[#222B3A]/80 mb-2 leading-relaxed max-w-md">
