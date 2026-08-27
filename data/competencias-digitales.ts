@@ -39,6 +39,7 @@ export const competenciasDigitalesData: LandingData = {
     ],
   },
   paraQuien: {
+    titulo: "Esta maestría es para ti si…",
     perfiles: [
       {
         titulo: "Docentes y formadores",

@@ -39,6 +39,7 @@ export const centrosHospitalariesData: LandingData = {
     ],
   },
   paraQuien: {
+    titulo: "Esta maestría es para ti si…",
     perfiles: [
       {
         titulo: "Profesionales de la salud",

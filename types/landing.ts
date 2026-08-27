@@ -25,6 +25,7 @@ export interface Perfil {
 }
 
 export interface ParaQuienData {
+  titulo?: string
   perfiles: Perfil[]
 }
 

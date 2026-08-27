@@ -24,7 +24,7 @@ export default function ParaQuien({ data }: Props) {
         >
           <span className="text-[#A2C049] text-sm font-bold uppercase tracking-widest">Para quién es</span>
           <h2 className="text-3xl lg:text-4xl font-black text-[#173257] mt-2">
-            Esta carrera es para ti si…
+            {data.titulo ?? "Esta carrera es para ti si…"}
           </h2>
         </motion.div>
 
