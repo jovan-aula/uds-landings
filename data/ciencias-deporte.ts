@@ -41,19 +41,19 @@ export const cienciasDeporteData: LandingData = {
   paraQuien: {
     perfiles: [
       {
-        titulo: "Deportistas y entrenadores",
+        titulo: "Atletas y entrenadores en activo",
         descripcion:
-          "Que quieren profesionalizar su práctica con bases científicas, metodológicas y técnicas de alto rendimiento.",
+          "Que compiten o preparan deportistas y quieren fundamentar su práctica en metodología científica del entrenamiento y análisis del rendimiento.",
       },
       {
-        titulo: "Profesionistas del deporte",
+        titulo: "Preparadores físicos y acondicionadores",
         descripcion:
-          "Que buscan gestionar centros deportivos, equipos o programas de acondicionamiento físico con formación oficial.",
+          "Que trabajan con equipos o clientes y buscan una carrera oficial que respalde su experiencia y los posicione en ligas o clubes.",
       },
       {
-        titulo: "Apasionados por la cultura física",
+        titulo: "Interesados en gestión deportiva",
         descripcion:
-          "Con vocación por promover el bienestar, la salud y el desarrollo humano a través del deporte.",
+          "Con visión para dirigir organizaciones, centros deportivos o programas institucionales de deporte competitivo.",
       },
     ],
   },
@@ -198,23 +198,23 @@ export const cienciasDeporteData: LandingData = {
     items: [
       {
         nombre: "Diego Moreno",
-        rol: "Egresado · Ciencias del Deporte",
-        cita: "Pude estudiar sin dejar de entrenar. Hoy dirijo mi propio centro deportivo con bases profesionales.",
+        rol: "Egresado · Ciencias del Deporte y Alto Rendimiento",
+        cita: "Seguí entrenando mientras estudiaba. Las materias de planeación del entrenamiento y detección de talento cambiaron cómo preparo a mis deportistas.",
         inicial: "D",
         color: "bg-[#26529C]",
       },
       {
         nombre: "Fernanda Ríos",
         rol: "Estudiante · 5° semestre",
-        cita: "El programa combina teoría y práctica de forma perfecta. Aplico cada aprendizaje con mis atletas.",
+        cita: "El módulo de evaluación y control del rendimiento deportivo me ayudó a diseñar un plan específico para cada atleta. Nada genérico.",
         inicial: "F",
         color: "bg-[#173257]",
       },
       {
-        nombre: "Miguel Torres",
-        rol: "Egresado · Ciencias del Deporte",
-        cita: "UDS me formó para trabajar con deportistas de alto rendimiento con metodología y ética profesional.",
-        inicial: "M",
+        nombre: "Gilberto Acosta",
+        rol: "Egresado · Ciencias del Deporte y Alto Rendimiento",
+        cita: "Pasé de ser preparador físico sin título a dirigir el área de alto rendimiento de un club. La licenciatura abrió esa puerta.",
+        inicial: "G",
         color: "bg-[#A2C049]",
       },
     ],

@@ -216,7 +216,7 @@ export const contabilidadData: LandingData = {
       {
         nombre: "Claudia Navarro",
         rol: "Egresada · Contabilidad Financiera",
-        cita: "UDS me formó con rigor y calidez. El acompañamiento de los asesores fue clave en mi proceso.",
+        cita: "Tenía un despacho contable sin título. Al egresar regularicé mis servicios ante el SAT y hoy firmo como contadora con cédula propia.",
         inicial: "C",
         color: "bg-[#A2C049]",
       },

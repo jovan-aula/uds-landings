@@ -192,22 +192,22 @@ export const ingenieriaIndustrialData: LandingData = {
     items: [
       {
         nombre: "Héctor Maldonado",
-        rol: "Egresado · Ingeniería Industrial",
-        cita: "Trabajé en planta mientras terminaba la carrera. Hoy soy jefe de logística con título oficial.",
+        rol: "Egresado · Ingeniería Industrial y Logística",
+        cita: "Estuve cinco años en planta sin título. Estudié en línea sin dejar de trabajar y pasé a jefe de logística en menos de un año de graduarme.",
         inicial: "H",
         color: "bg-[#26529C]",
       },
       {
         nombre: "Patricia Ruiz",
         rol: "Estudiante · 6° cuatrimestre",
-        cita: "El programa cubre desde procesos industriales hasta finanzas. Una formación muy completa y aplicable.",
+        cita: "El módulo de distribución de planta y cadena de suministro lo apliqué directamente en el proyecto de mejora de mi área. No fue teoría, fue práctica real.",
         inicial: "P",
         color: "bg-[#173257]",
       },
       {
         nombre: "Javier Montes",
-        rol: "Egresado · Ingeniería Industrial",
-        cita: "UDS me formó con las herramientas necesarias para optimizar procesos en cualquier industria.",
+        rol: "Egresado · Ingeniería Industrial y Logística",
+        cita: "Lo que más me sorprendió fue combinar ingeniería con comercio internacional y finanzas. Eso me dio una visión que muy pocos técnicos tienen en mi empresa.",
         inicial: "J",
         color: "bg-[#A2C049]",
       },

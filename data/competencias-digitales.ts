@@ -42,19 +42,19 @@ export const competenciasDigitalesData: LandingData = {
     titulo: "Esta maestría es para ti si…",
     perfiles: [
       {
-        titulo: "Docentes y formadores",
+        titulo: "Docentes y formadores con licenciatura",
         descripcion:
-          "Que quieren integrar la tecnología y las competencias digitales en su práctica educativa con fundamentos sólidos.",
+          "Que ya ejercen la docencia y quieren incorporar metodologías digitales, diseño instruccional y evaluación por competencias en su práctica.",
       },
       {
         titulo: "Coordinadores y directivos educativos",
         descripcion:
-          "Que buscan liderar la transformación digital de sus instituciones con herramientas pedagógicas actualizadas.",
+          "Responsables de programas o instituciones que necesitan liderar procesos de transformación digital con criterio pedagógico, no solo técnico.",
       },
       {
-        titulo: "Diseñadores instruccionales",
+        titulo: "Capacitadores del sector empresarial",
         descripcion:
-          "Interesados en crear experiencias de aprendizaje innovadoras, efectivas y adaptadas a entornos digitales.",
+          "Con experiencia en formación corporativa que buscan elevar sus diseños de aprendizaje a estándares formales y obtener un grado de maestría.",
       },
     ],
   },
@@ -139,23 +139,23 @@ export const competenciasDigitalesData: LandingData = {
     items: [
       {
         nombre: "Mtra. Karla Ibáñez",
-        rol: "Egresada · Competencias Digitales",
-        cita: "La maestría transformó mi forma de enseñar. Hoy diseño cursos en línea con impacto real en mis alumnos.",
+        rol: "Egresada · Maestría en Competencias Digitales",
+        cita: "Antes improvisaba mis clases en línea. Después del módulo de diseño de ambientes de aprendizaje, todo cambió: estructuro, evalúo y mejoro con criterio.",
         inicial: "K",
         color: "bg-[#26529C]",
       },
       {
         nombre: "Mtro. Raúl Domínguez",
         rol: "Estudiante · 3er semestre",
-        cita: "Aplico cada módulo en mis clases. La formación es práctica, actual y muy bien estructurada.",
+        cita: "Soy coordinador académico y el módulo de gestión del conocimiento me dio un marco real para acompañar a mis docentes en la transición digital.",
         inicial: "R",
         color: "bg-[#173257]",
       },
       {
-        nombre: "Lic. Patricia Soto",
-        rol: "Egresada · Competencias Digitales",
-        cita: "UDS me dio las herramientas para liderar proyectos de innovación educativa en mi institución.",
-        inicial: "P",
+        nombre: "Lic. Verónica Peralta",
+        rol: "Egresada · Maestría en Competencias Digitales",
+        cita: "Trabajaba en capacitación corporativa sin grado de maestría. Hoy dirijo el área de aprendizaje digital de mi empresa con título y con metodología.",
+        inicial: "V",
         color: "bg-[#A2C049]",
       },
     ],

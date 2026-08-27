@@ -43,19 +43,19 @@ export const centrosHospitalariesData: LandingData = {
 
     perfiles: [
       {
-        titulo: "Profesionales de la salud",
+        titulo: "Profesionales clínicos con licenciatura",
         descripcion:
-          "Médicos, enfermeros o personal clínico que buscan desarrollar habilidades de gestión y liderazgo en instituciones de salud.",
+          "Médicos, enfermeras o personal de salud que ya ejercen y quieren asumir roles de dirección o coordinación en hospitales y clínicas.",
       },
       {
         titulo: "Administradores en el sector salud",
         descripcion:
-          "Que desean especializarse en la dirección estratégica, financiera y operativa de hospitales y clínicas.",
+          "Con experiencia en gestión hospitalaria que buscan profundizar en finanzas, legislación y estrategia para liderar instituciones de mayor complejidad.",
       },
       {
-        titulo: "Líderes con visión transformadora",
+        titulo: "Directivos de centros de atención médica",
         descripcion:
-          "Comprometidos con la calidad, la eficiencia y la innovación en los servicios de salud de México.",
+          "Responsables de clínicas, consultorios o áreas operativas que necesitan una formación formal para tomar decisiones con mayor sustento técnico.",
       },
     ],
   },
@@ -142,23 +142,23 @@ export const centrosHospitalariesData: LandingData = {
     items: [
       {
         nombre: "Dra. Paola Reyes",
-        rol: "Egresada · Maestría en Centros Hospitalarios",
-        cita: "La maestría me dio las herramientas para gestionar equipos y recursos con una visión estratégica real.",
+        rol: "Egresada · Maestría en Administración de Centros Hospitalarios",
+        cita: "Como médica, no tenía formación en finanzas ni gestión. Esta maestría me dio exactamente eso: ahora dirijo el área operativa de mi hospital.",
         inicial: "P",
         color: "bg-[#26529C]",
       },
       {
         nombre: "Lic. Armando Cruz",
         rol: "Estudiante · 3er semestre",
-        cita: "Puedo aplicar cada aprendizaje directamente en mi trabajo. La modalidad virtual se adapta perfecto a mi agenda.",
+        cita: "El módulo de habilidades directivas y el de vinculación estratégica los apliqué de inmediato en la coordinación de mi clínica.",
         inicial: "A",
         color: "bg-[#173257]",
       },
       {
-        nombre: "Dra. Sofía Morales",
-        rol: "Egresada · Maestría en Centros Hospitalarios",
-        cita: "UDS me formó para tomar decisiones con impacto real en la calidad de atención al paciente.",
-        inicial: "S",
+        nombre: "Dra. Renata Solís",
+        rol: "Egresada · Maestría en Administración de Centros Hospitalarios",
+        cita: "Estudié sin pedir licencia. Cada semestre me permitió tomar mejores decisiones en la dirección del centro donde trabajo.",
+        inicial: "R",
         color: "bg-[#A2C049]",
       },
     ],

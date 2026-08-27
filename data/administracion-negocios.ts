@@ -41,19 +41,19 @@ export const administracionNegociosData: LandingData = {
   paraQuien: {
     perfiles: [
       {
-        titulo: "Emprendedores y futuros líderes",
+        titulo: "Emprendedores con negocio propio",
         descripcion:
-          "Que quieren crear, gestionar y hacer crecer proyectos con bases sólidas en estrategia y finanzas.",
+          "Que ya operan un proyecto o empresa y quieren tomar mejores decisiones con bases sólidas en finanzas, estrategia y administración.",
       },
       {
         titulo: "Profesionistas en activo",
         descripcion:
-          "Que buscan formalizarse o escalar en su área con una carrera flexible que se adapta a su ritmo de vida.",
+          "Que trabajan en empresas y buscan ascender a puestos gerenciales o de coordinación con un título oficial que lo respalde.",
       },
       {
-        titulo: "Personas con visión de negocio",
+        titulo: "Recién egresados de bachillerato",
         descripcion:
-          "Con interés en el liderazgo, el mercado y la creación de valor en organizaciones públicas o privadas.",
+          "Con interés en el mundo empresarial, las ventas o los mercados, y que quieren una carrera con salida laboral inmediata.",
       },
     ],
   },
@@ -200,24 +200,24 @@ export const administracionNegociosData: LandingData = {
   testimonios: {
     items: [
       {
-        nombre: "Carlos Mendoza",
+        nombre: "Tomás Velázquez",
         rol: "Egresado · Licenciatura en Administración y Negocios",
-        cita: "Terminé la carrera sin dejar mi empresa. Hoy tengo herramientas reales para tomar mejores decisiones.",
-        inicial: "C",
+        cita: "Terminé la carrera sin cerrar mi negocio. El módulo de finanzas empresariales cambió la forma en que administro mi empresa.",
+        inicial: "T",
         color: "bg-[#26529C]",
       },
       {
-        nombre: "Laura Espinoza",
+        nombre: "Nadia Gutiérrez",
         rol: "Estudiante · 6° cuatrimestre",
-        cita: "La modalidad en línea me permitió estudiar desde casa. Los contenidos son prácticos y aplicables desde el primer semestre.",
-        inicial: "L",
+        cita: "Estudio de noche y trabajo de día. Los casos prácticos de mercadotecnia y estrategia los aplico directamente con mis clientes.",
+        inicial: "N",
         color: "bg-[#173257]",
       },
       {
-        nombre: "Roberto Sánchez",
+        nombre: "Ernesto Palomino",
         rol: "Egresado · Licenciatura en Administración y Negocios",
-        cita: "UDS me dio la formación y el respaldo institucional que necesitaba para crecer profesionalmente.",
-        inicial: "R",
+        cita: "Pasé de auxiliar administrativo a coordinador de operaciones. El título y lo que aprendí en negocios internacionales marcaron la diferencia.",
+        inicial: "E",
         color: "bg-[#A2C049]",
       },
     ],

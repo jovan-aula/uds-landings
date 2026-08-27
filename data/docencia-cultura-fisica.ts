@@ -41,19 +41,19 @@ export const docenciaCulturaFisicaData: LandingData = {
   paraQuien: {
     perfiles: [
       {
-        titulo: "Docentes de educación física",
+        titulo: "Maestros de educación física sin título",
         descripcion:
-          "Que quieren formalizarse con un título oficial y enriquecer su práctica con metodologías actuales de entrenamiento.",
+          "Que ya trabajan frente a grupo en escuelas públicas o privadas y necesitan su licenciatura para regularizarse o concursar por plaza.",
       },
       {
-        titulo: "Entrenadores y monitores deportivos",
+        titulo: "Instructores y promotores de actividad física",
         descripcion:
-          "Que buscan una carrera con respaldo institucional para dirigir programas de actividad física con mayor impacto.",
+          "Que conducen clases, talleres o programas comunitarios y quieren una formación pedagógica sólida para enseñar con más método y alcance.",
       },
       {
-        titulo: "Apasionados por la enseñanza del deporte",
+        titulo: "Interesados en cultura física y salud pública",
         descripcion:
-          "Con vocación por formar atletas, promover estilos de vida activos y liderar proyectos de cultura física.",
+          "Con deseos de trabajar en programas municipales, instituciones de gobierno o centros recreativos promoviendo estilos de vida activos.",
       },
     ],
   },
@@ -198,22 +198,22 @@ export const docenciaCulturaFisicaData: LandingData = {
     items: [
       {
         nombre: "Arturo Vega",
-        rol: "Egresado · Docencia en Cultura Física",
-        cita: "Estudié sin dejar de dar clases. Hoy tengo mi título y soy coordinador de cultura física en mi municipio.",
+        rol: "Egresado · Docencia en Cultura Física y Entrenamiento Deportivo",
+        cita: "Impartía educación física desde hace años sin título. Con la licenciatura gané mi plaza definitiva y ahora coordino el programa municipal de activación.",
         inicial: "A",
         color: "bg-[#26529C]",
       },
       {
         nombre: "Lorena Castillo",
         rol: "Estudiante · 6° semestre",
-        cita: "El programa conecta la teoría del entrenamiento con la práctica docente de forma muy efectiva.",
+        cita: "Las materias de diseño de programas de cultura física y psicopedagogía me cambiaron la forma de planear mis clases. No es solo hacer ejercicio.",
         inicial: "L",
         color: "bg-[#173257]",
       },
       {
         nombre: "Iván Guzmán",
-        rol: "Egresado · Docencia en Cultura Física",
-        cita: "UDS me formó con herramientas pedagógicas y técnicas que aplico todos los días con mis estudiantes.",
+        rol: "Egresado · Docencia en Cultura Física y Entrenamiento Deportivo",
+        cita: "Antes solo entrenaba. Ahora también enseño a otros a entrenar bien. La diferencia entre los dos enfoques la aprendí en UDS.",
         inicial: "I",
         color: "bg-[#A2C049]",
       },

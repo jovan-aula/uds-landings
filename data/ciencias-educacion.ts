@@ -41,19 +41,19 @@ export const cienciasEducacionData: LandingData = {
   paraQuien: {
     perfiles: [
       {
-        titulo: "Docentes en activo",
+        titulo: "Docentes sin título en activo",
         descripcion:
-          "Que quieren formalizarse y fortalecer su práctica educativa con fundamentos pedagógicos y herramientas actuales.",
+          "Que ya dan clases pero no cuentan con una licenciatura formal, y quieren consolidar su práctica con fundamentos pedagógicos y obtener su cédula.",
       },
       {
-        titulo: "Personas con vocación educativa",
+        titulo: "Recién egresados de bachillerato",
         descripcion:
-          "Que buscan impactar en comunidades, instituciones o familias a través de la educación con respaldo profesional.",
+          "Con vocación por enseñar y deseos de trabajar en escuelas, programas sociales o capacitación corporativa.",
       },
       {
-        titulo: "Profesionistas en busca de cambio",
+        titulo: "Profesionistas que buscan reorientarse",
         descripcion:
-          "Que desean migrar al sector educativo con una carrera flexible, reconocida y compatible con su vida laboral.",
+          "Con experiencia en otras áreas y que quieren migrar al sector educativo o de capacitación con una carrera reconocida oficialmente.",
       },
     ],
   },
@@ -183,21 +183,21 @@ export const cienciasEducacionData: LandingData = {
       {
         nombre: "Marisol Fuentes",
         rol: "Egresada · Ciencias de la Educación",
-        cita: "Estudié mientras daba clases. Hoy tengo mi título y mi práctica docente mejoró enormemente.",
+        cita: "Llevaba cinco años frente a grupo sin título. Estudié en línea, obtuve mi cédula y ahora participo en la reestructura curricular de mi escuela.",
         inicial: "M",
         color: "bg-[#26529C]",
       },
       {
         nombre: "Jorge Hernández",
         rol: "Estudiante · 5° semestre",
-        cita: "Los contenidos son muy aplicables. Puedo implementar lo que aprendo en mi salón de clases de inmediato.",
+        cita: "Las materias de diseño instruccional y evaluación del aprendizaje las apliqué directamente en los talleres que facilito. Cambié mi forma de planear.",
         inicial: "J",
         color: "bg-[#173257]",
       },
       {
         nombre: "Ana Lucía Ramírez",
         rol: "Egresada · Ciencias de la Educación",
-        cita: "UDS me dio la formación teórica y práctica que necesitaba para crecer en el sistema educativo.",
+        cita: "Venía de otra carrera y quería trabajar en capacitación empresarial. La licenciatura me abrió puertas que no esperaba en el sector privado.",
         inicial: "A",
         color: "bg-[#A2C049]",
       },
