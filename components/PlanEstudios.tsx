@@ -41,7 +41,8 @@ export default function PlanEstudios({ data }: Props) {
         <div className="grid lg:grid-cols-2 gap-2">
           {data.cuatrimestres.map((c, i) => {
             const isOpen = abierto === c.num;
-            const isLast = c.num === data.cuatrimestres.length;
+            const isOddTotal = data.cuatrimestres.length % 2 !== 0;
+            const isLast = isOddTotal && c.num === data.cuatrimestres.length;
             return (
               <motion.div
                 key={c.num}
