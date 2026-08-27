@@ -44,7 +44,17 @@ export default function Hero({ data }: Props) {
               {...fade(0.1)}
               className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#173257] leading-tight mb-4"
             >
-              {data.h1Line1}
+              {(() => {
+                if (data.h1Line1.startsWith("Estudia ") && data.h1Line1.endsWith(" en línea")) {
+                  const programa = data.h1Line1.slice(8, -9);
+                  return <>Estudia <span className="text-[#A2C049]">{programa}</span> en línea</>;
+                }
+                if (data.h1Line1.startsWith("Especialízate en ")) {
+                  const programa = data.h1Line1.slice(17);
+                  return <>Especialízate en <span className="text-[#A2C049]">{programa}</span></>;
+                }
+                return data.h1Line1;
+              })()}
               <br />
               <span className="text-[#26529C]">{data.h1Line2}</span>
             </motion.h1>

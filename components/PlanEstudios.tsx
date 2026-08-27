@@ -97,8 +97,15 @@ export default function PlanEstudios({ data }: Props) {
                       {/* Línea divisora azul */}
                       <div className="mx-5 h-px bg-gradient-to-r from-[#26529C]/20 to-transparent mb-4" />
                       <ul className="px-5 pb-5 grid sm:grid-cols-2 gap-2">
-                        {c.materias.map((m) => (
-                          <li key={m} className="flex items-start gap-2.5 text-sm text-[#222B3A]">
+                        {c.materias.map((m, idx) => (
+                          <li
+                            key={m}
+                            className={`flex items-start gap-2.5 text-sm text-[#222B3A] ${
+                              c.materias.length % 2 !== 0 && idx === c.materias.length - 1
+                                ? "sm:col-span-2 sm:max-w-[50%]"
+                                : ""
+                            }`}
+                          >
                             <span className="mt-[5px] w-1.5 h-1.5 rounded-full bg-[#A2C049] shrink-0" />
                             {m}
                           </li>
