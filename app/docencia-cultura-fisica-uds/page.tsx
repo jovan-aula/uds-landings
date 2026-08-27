@@ -4,11 +4,11 @@ import { docenciaCulturaFisicaData } from "@/data/docencia-cultura-fisica"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Docencia en Cultura Física y Entrenamiento Deportivo | UDS",
-  description: "Estudia Docencia en Cultura Física 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+  description: "Estudia Docencia en Cultura Física y Entrenamiento Deportivo en línea sin dejar de trabajar · 4 años · RVOE SEP. Beca del 50%. Título con validez nacional.",
   keywords: ["docencia en cultura física en línea", "licenciatura entrenamiento deportivo virtual", "educación física online México"],
   openGraph: {
     title: "Licenciatura en Docencia en Cultura Física y Entrenamiento Deportivo | UDS",
-    description: "Estudia Docencia en Cultura Física 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+    description: "Estudia Docencia en Cultura Física y Entrenamiento Deportivo en línea sin dejar de trabajar · 4 años · RVOE SEP. Beca del 50%. Título con validez nacional.",
     url: "https://demo.aulaconsultoria.mx/docencia-cultura-fisica-uds",
     siteName: "UDS Mi Universidad",
     locale: "es_MX",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Licenciatura en Docencia en Cultura Física y Entrenamiento Deportivo | UDS",
-    description: "Estudia Docencia en Cultura Física 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+    description: "Estudia Docencia en Cultura Física en línea sin dejar de trabajar. RVOE SEP. Beca del 50%. Título con validez nacional.",
   },
 }
 

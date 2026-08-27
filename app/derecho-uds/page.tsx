@@ -4,7 +4,7 @@ import LandingPage from "@/components/LandingPage";
 
 export const metadata: Metadata = {
   title: derechoData.meta.title,
-  description: derechoData.meta.description,
+  description: "Estudia Derecho en línea sin dejar de trabajar · 3 años · RVOE Federal SEP. Beca del 50%. Título y cédula profesional con validez en toda la república mexicana.",
   keywords: derechoData.meta.keywords,
   openGraph: {
     title: derechoData.meta.title,

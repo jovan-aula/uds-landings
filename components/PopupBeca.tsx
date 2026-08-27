@@ -86,6 +86,10 @@ export default function PopupBeca({ data, webhookUrl }: Props) {
                       const programa = data.h2Line1.slice(8, data.h2Line1.lastIndexOf(" con hasta"));
                       return <>Estudia <span className="text-[#A2C049]">{programa}</span> con hasta</>;
                     }
+                    if (data.h2Line1.startsWith("Especialízate en ") && data.h2Line1.includes(" con hasta")) {
+                      const programa = data.h2Line1.slice(17, data.h2Line1.lastIndexOf(" con hasta"));
+                      return <>Especialízate en <span className="text-[#A2C049]">{programa}</span> con hasta</>;
+                    }
                     return data.h2Line1;
                   })()}{" "}
                   <span className="text-[#A2C049]">{data.h2Highlight}</span>

@@ -40,6 +40,7 @@ export const centrosHospitalariesData: LandingData = {
   },
   paraQuien: {
     titulo: "Esta maestría es para ti si…",
+
     perfiles: [
       {
         titulo: "Profesionales de la salud",
@@ -173,7 +174,7 @@ export const centrosHospitalariesData: LandingData = {
   },
   popup: {
     ciclo: "CICLO 2026",
-    h2Line1: "Especialízate con hasta",
+    h2Line1: "Especialízate en Administración Hospitalaria con hasta",
     h2Highlight: "50% de beca",
     precioDesde: "$1,500 al mes",
     urgenciaFecha: "21 de septiembre",

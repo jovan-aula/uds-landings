@@ -4,11 +4,11 @@ import { ingenieriaIndustrialData } from "@/data/ingenieria-industrial"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Ingeniería Industrial y Logística en Línea | UDS Mi Universidad",
-  description: "Estudia Ingeniería Industrial y Logística 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+  description: "Estudia Ingeniería Industrial y Logística en línea sin dejar de trabajar · 3 años · RVOE Federal SEP. Beca del 50%. Título y cédula con validez en toda la república.",
   keywords: ["ingeniería industrial en línea", "licenciatura en logística virtual", "ingeniería online México"],
   openGraph: {
     title: "Licenciatura en Ingeniería Industrial y Logística en Línea | UDS Mi Universidad",
-    description: "Estudia Ingeniería Industrial y Logística 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+    description: "Estudia Ingeniería Industrial y Logística en línea sin dejar de trabajar · 3 años · RVOE Federal SEP. Beca del 50%. Título y cédula con validez en toda la república.",
     url: "https://demo.aulaconsultoria.mx/ingenieria-industrial-uds",
     siteName: "UDS Mi Universidad",
     locale: "es_MX",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Licenciatura en Ingeniería Industrial y Logística en Línea | UDS Mi Universidad",
-    description: "Estudia Ingeniería Industrial y Logística 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+    description: "Estudia Ingeniería Industrial y Logística en línea sin dejar de trabajar. RVOE Federal SEP. Beca del 50%. Título y cédula con validez nacional.",
   },
 }
 

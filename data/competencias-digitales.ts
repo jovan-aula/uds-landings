@@ -171,7 +171,7 @@ export const competenciasDigitalesData: LandingData = {
   },
   popup: {
     ciclo: "CICLO 2026",
-    h2Line1: "Especialízate con hasta",
+    h2Line1: "Especialízate en Competencias Digitales con hasta",
     h2Highlight: "50% de beca",
     precioDesde: "$1,500 al mes",
     urgenciaFecha: "21 de septiembre",

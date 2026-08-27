@@ -4,11 +4,11 @@ import { cienciasDeporteData } from "@/data/ciencias-deporte"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Ciencias del Deporte y Alto Rendimiento | UDS Mi Universidad",
-  description: "Estudia Ciencias del Deporte 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+  description: "Estudia Ciencias del Deporte y Alto Rendimiento en línea sin dejar de trabajar · 4 años · RVOE SEP. Beca del 50%. Título con validez en toda la república.",
   keywords: ["licenciatura en ciencias del deporte en línea", "carrera de deporte virtual", "entrenamiento deportivo online México"],
   openGraph: {
     title: "Licenciatura en Ciencias del Deporte y Alto Rendimiento | UDS Mi Universidad",
-    description: "Estudia Ciencias del Deporte 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+    description: "Estudia Ciencias del Deporte y Alto Rendimiento en línea sin dejar de trabajar · 4 años · RVOE SEP. Beca del 50%. Título con validez en toda la república.",
     url: "https://demo.aulaconsultoria.mx/ciencias-deporte-uds",
     siteName: "UDS Mi Universidad",
     locale: "es_MX",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Licenciatura en Ciencias del Deporte y Alto Rendimiento | UDS Mi Universidad",
-    description: "Estudia Ciencias del Deporte 100% en línea. Título con validez oficial en México. Sin dejar de trabajar.",
+    description: "Estudia Ciencias del Deporte y Alto Rendimiento en línea sin dejar de trabajar. RVOE SEP. Beca del 50%. Título con validez nacional.",
   },
 }
 

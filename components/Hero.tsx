@@ -43,11 +43,12 @@ export default function Hero({ data }: Props) {
             <motion.h1 {...fade(0.1)} className="mb-4 w-full">
               {(() => {
                 if (data.h1Line1.startsWith("Estudia ") && data.h1Line1.endsWith(" en línea")) {
+                  const tipo = data.badge2.split("·")[0].trim();
                   const programa = data.h1Line1.slice(8, -9);
                   return (
                     <>
                       <span className="block text-sm font-semibold text-[#173257]/50 uppercase tracking-widest mb-1">
-                        Estudia en línea
+                        {tipo} · en línea
                       </span>
                       <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
                         {programa}
@@ -56,11 +57,12 @@ export default function Hero({ data }: Props) {
                   );
                 }
                 if (data.h1Line1.startsWith("Especialízate en ")) {
+                  const tipo = data.badge2.split("·")[0].trim();
                   const programa = data.h1Line1.slice(17);
                   return (
                     <>
                       <span className="block text-sm font-semibold text-[#173257]/50 uppercase tracking-widest mb-1">
-                        Especialízate en línea
+                        {tipo} · en línea
                       </span>
                       <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
                         {programa}

@@ -4,11 +4,11 @@ import { centrosHospitalariesData } from "@/data/centros-hospitalarios"
 
 export const metadata: Metadata = {
   title: "Maestría en Administración de Centros Hospitalarios | UDS Mi Universidad",
-  description: "Especialízate en gestión hospitalaria 100% en línea. Maestría con validez oficial en México. Sin dejar de trabajar.",
+  description: "Maestría en Administración de Centros Hospitalarios en línea sin dejar de trabajar · 2 años · RVOE Federal SEP. Beca del 50%. Cédula con validez nacional.",
   keywords: ["maestría en administración hospitalaria", "gestión de centros de salud", "administración hospitalaria en línea"],
   openGraph: {
     title: "Maestría en Administración de Centros Hospitalarios | UDS Mi Universidad",
-    description: "Especialízate en gestión hospitalaria 100% en línea. Maestría con validez oficial en México. Sin dejar de trabajar.",
+    description: "Maestría en Administración de Centros Hospitalarios en línea sin dejar de trabajar · 2 años · RVOE Federal SEP. Beca del 50%. Cédula con validez nacional.",
     url: "https://demo.aulaconsultoria.mx/centros-hospitalarios-uds",
     siteName: "UDS Mi Universidad",
     locale: "es_MX",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Maestría en Administración de Centros Hospitalarios | UDS Mi Universidad",
-    description: "Especialízate en gestión hospitalaria 100% en línea. Maestría con validez oficial en México. Sin dejar de trabajar.",
+    description: "Maestría en Administración Hospitalaria en línea sin dejar de trabajar. RVOE Federal SEP. Beca del 50%. Cédula con validez nacional.",
   },
 }
 
