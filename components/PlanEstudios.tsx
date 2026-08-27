@@ -2,110 +2,13 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useInView } from "framer-motion";
+import type { PlanEstudiosData } from "@/types/landing";
 
-const cuatrimestres = [
-  {
-    num: 1,
-    materias: [
-      "Introducción al estudio del derecho",
-      "Historia del pensamiento jurídico social",
-      "Terminología romana aplicada al Derecho",
-      "Filosofía del derecho",
-      "Teoría del estado",
-      "Informática aplicada I",
-    ],
-  },
-  {
-    num: 2,
-    materias: [
-      "Teoría general del proceso I",
-      "Sistemas jurídicos contemporáneos",
-      "Sociología jurídica",
-      "Teoría general de los derechos Humanos",
-      "Derecho civil I",
-      "Informática aplicada II",
-    ],
-  },
-  {
-    num: 3,
-    materias: [
-      "Teoría general del proceso II",
-      "Derecho penal I",
-      "Derecho mercantil I",
-      "Derecho constitucional I",
-      "Derecho civil II",
-      "Comunicación asertiva",
-    ],
-  },
-  {
-    num: 4,
-    materias: [
-      "Teoría general del proceso III",
-      "Derecho penal II",
-      "Derecho mercantil II",
-      "Derecho constitucional II",
-      "Derecho civil III",
-      "Argumentación e interpretación Jurídica",
-    ],
-  },
-  {
-    num: 5,
-    materias: [
-      "Derecho del trabajo I",
-      "Derecho procesal penal acusatorio",
-      "Derecho procesal mercantil",
-      "Derecho administrativo I",
-      "Derecho civil IV",
-      "Técnicas de interrogatorio y contrainterrogatorio",
-    ],
-  },
-  {
-    num: 6,
-    materias: [
-      "Derecho del trabajo II",
-      "Práctica forense I de derecho procesal Penal",
-      "Derecho internacional público",
-      "Derecho administrativo II",
-      "Derecho procesal civil",
-      "Técnicas de oralidad jurídica",
-    ],
-  },
-  {
-    num: 7,
-    materias: [
-      "Derecho procesal laboral",
-      "Práctica forense II de derecho procesal Penal",
-      "Derecho internacional privado",
-      "Juicio de amparo I",
-      "Práctica forense de derecho civil y mercantil",
-      "Ética y deontología jurídica",
-    ],
-  },
-  {
-    num: 8,
-    materias: [
-      "Derecho aduanero",
-      "Derecho fiscal I",
-      "Seguridad pública",
-      "Juicio de amparo II",
-      "Derecho agrario",
-      "Métodos y técnicas de investigación",
-    ],
-  },
-  {
-    num: 9,
-    materias: [
-      "Derecho notarial",
-      "Derecho fiscal II",
-      "Función jurisdiccional y carrera Judicial",
-      "Práctica forense del juicio de amparo",
-      "Derecho del medio ambiente",
-      "Seminario de titulación y tesis",
-    ],
-  },
-];
+interface Props {
+  data: PlanEstudiosData
+}
 
-export default function PlanEstudios() {
+export default function PlanEstudios({ data }: Props) {
   const [abierto, setAbierto] = useState<number | null>(1);
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
@@ -121,24 +24,24 @@ export default function PlanEstudios() {
         >
           <span className="text-[#A2C049] text-sm font-bold uppercase tracking-widest">Plan de estudios</span>
           <h2 className="text-3xl lg:text-4xl font-black text-[#173257] mt-2">
-            3 años de formación integral
+            {data.titulo}
           </h2>
-          <p className="text-[#222B3A]/60 mt-2 text-sm">9 cuatrimestres · Modalidad no escolarizada</p>
+          <p className="text-[#222B3A]/60 mt-2 text-sm">{data.descripcion}</p>
 
           {/* RVOE destacado */}
           <div className="mt-4 inline-flex items-center gap-2.5 bg-[#173257] text-white text-xs font-bold px-4 py-2.5 rounded-full">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A2C049" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
             </svg>
-            Programa con RVOE Federal SEP · Registro No. 20254217
+            {data.rvoeLabel}
             <span className="ml-1 bg-[#A2C049] text-[#173257] px-2 py-0.5 rounded-full text-[10px] font-black">OFICIAL</span>
           </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-2">
-          {cuatrimestres.map((c, i) => {
+          {data.cuatrimestres.map((c, i) => {
             const isOpen = abierto === c.num;
-            const isLast = c.num === 9;
+            const isLast = c.num === data.cuatrimestres.length;
             return (
               <motion.div
                 key={c.num}
@@ -168,7 +71,7 @@ export default function PlanEstudios() {
                     </div>
                     <div>
                       <span className={`font-bold text-sm transition-colors ${isOpen ? "text-[#26529C]" : "text-[#173257]"}`}>
-                        Cuatrimestre {c.num}
+                        {data.periodoLabel ?? "Cuatrimestre"} {c.num}
                       </span>
                       {!isOpen && (
                         <p className="text-[#222B3A]/40 text-xs mt-0.5">{c.materias.length} materias</p>

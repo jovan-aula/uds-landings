@@ -2,10 +2,14 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import type { FormularioData } from "@/types/landing";
 
-const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_DERECHO ?? "";
+interface Props {
+  data: FormularioData
+  webhookUrl: string
+}
 
-export default function FormularioGHL() {
+export default function FormularioGHL({ data, webhookUrl }: Props) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -19,10 +23,10 @@ export default function FormularioGHL() {
     e.preventDefault();
     setEstado("enviando");
     try {
-      await fetch(GHL_WEBHOOK_URL, {
+      await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, programa: "Licenciatura en Derecho" }),
+        body: JSON.stringify({ ...form, programa: data.programa }),
       });
       setEstado("ok");
     } catch {
@@ -47,11 +51,7 @@ export default function FormularioGHL() {
               Un asesor te contactará en menos de 24 horas
             </h2>
             <ul className="space-y-4 mb-8 text-left">
-              {[
-                "Sin compromiso de inscripción",
-                "Te explicamos costo y cómo aplicar tu beca del 50%",
-                "Proceso de admisión 100% en línea",
-              ].map((item) => (
+              {data.listItems.map((item) => (
                 <li key={item} className="flex items-center gap-3">
                   <div className="w-5 h-5 rounded-full bg-[#A2C049] flex items-center justify-center shrink-0">
                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#173257" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
@@ -67,7 +67,7 @@ export default function FormularioGHL() {
             <div className="flex items-center gap-2 bg-white rounded-xl px-4 py-3 border border-[#EAF1FB] shadow-sm w-fit mx-auto lg:mx-0">
               <span className="w-2 h-2 rounded-full bg-[#A2C049] animate-pulse shrink-0" />
               <span className="text-xs font-semibold text-[#173257]">
-                Cerramos inscripciones el 21 de septiembre
+                {data.urgenciaTexto}
               </span>
             </div>
           </motion.div>

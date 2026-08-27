@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import type { HeroData } from "@/types/landing";
 
 const fade = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -9,7 +10,11 @@ const fade = (delay = 0) => ({
   transition: { duration: 0.6, delay, ease: "easeOut" as const },
 });
 
-export default function Hero() {
+interface Props {
+  data: HeroData
+}
+
+export default function Hero({ data }: Props) {
   return (
     <section className="relative bg-[#EAF1FB] pt-44 overflow-hidden">
       {/* Blob decorativo fondo */}
@@ -27,10 +32,10 @@ export default function Hero() {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A2C049" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" />
                 </svg>
-                RVOE Federal SEP · No. 20254217
+                {data.badge1}
               </span>
               <span className="inline-block bg-[#A2C049] text-[#173257] text-xs font-bold px-3 py-2 rounded-full">
-                Licenciatura · 3 años · Virtual
+                {data.badge2}
               </span>
             </motion.div>
 
@@ -39,18 +44,18 @@ export default function Hero() {
               {...fade(0.1)}
               className="text-3xl sm:text-4xl lg:text-[2.75rem] font-black text-[#173257] leading-tight mb-4"
             >
-              Estudia Derecho en línea
+              {data.h1Line1}
               <br />
-              <span className="text-[#26529C]">sin dejar de trabajar.</span>
+              <span className="text-[#26529C]">{data.h1Line2}</span>
             </motion.h1>
 
             <motion.p {...fade(0.2)} className="text-base text-[#222B3A]/80 mb-2 leading-relaxed max-w-md">
-              A tu ritmo, sin horarios fijos. Compatible con tu trabajo, tu familia y tu vida real.{" "}
-              <strong className="text-[#173257]">47 años formando profesionistas</strong> con atención personalizada en cada paso.
+              {data.subtitulo}{" "}
+              <strong className="text-[#173257]">{data.subtituloStrong}</strong> con atención personalizada en cada paso.
             </motion.p>
 
             <motion.p {...fade(0.25)} className="text-sm font-bold text-[#26529C] mb-8">
-              Título y cédula profesional con validez en toda la república mexicana.
+              {data.tagline}
             </motion.p>
 
             <motion.div {...fade(0.3)} className="flex flex-col sm:flex-row gap-3">
@@ -58,7 +63,7 @@ export default function Hero() {
                 href="#formulario"
                 className="bg-gradient-to-r from-[#26529C] to-[#173257] hover:opacity-90 text-white font-bold px-7 py-4 rounded-full transition-all flex items-center justify-center gap-2 shadow-lg shadow-[#26529C]/30"
               >
-                Hablar con un asesor
+                {data.cta1}
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -67,7 +72,7 @@ export default function Hero() {
                 href="#plan"
                 className="border-2 border-[#26529C] text-[#26529C] hover:bg-[#26529C] hover:text-white font-medium px-7 py-4 rounded-full transition-colors flex items-center justify-center"
               >
-                Ver plan de estudios
+                {data.cta2}
               </a>
             </motion.div>
 
@@ -98,7 +103,7 @@ export default function Hero() {
                 className="bg-white rounded-2xl shadow-xl px-4 py-3 border border-[#EAF1FB]"
               >
                 <p className="text-xs text-[#222B3A]/60 font-medium">Beca disponible</p>
-                <p className="text-2xl font-black text-[#A2C049]">50%</p>
+                <p className="text-2xl font-black text-[#A2C049]">{data.becaPorcentaje}</p>
                 <p className="text-xs text-[#173257] font-semibold">en colegiatura</p>
               </motion.div>
             </motion.div>
@@ -106,8 +111,8 @@ export default function Hero() {
             {/* Estudiante sin fondo */}
             <div className="relative w-[280px] sm:w-[340px] lg:w-[420px] h-[320px] sm:h-[420px] lg:h-[560px] z-[2]">
               <Image
-                src="/estudiante-hero.png"
-                alt="Estudiante UDS Derecho"
+                src={data.imageSrc}
+                alt={data.imageAlt}
                 fill
                 className="object-contain object-bottom mix-blend-multiply"
                 priority
@@ -123,12 +128,7 @@ export default function Hero() {
           transition={{ delay: 0.5, duration: 0.6 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-3 py-6 border-t border-[#26529C]/10"
         >
-          {[
-            { label: "RVOE Federal · SEP", highlight: true },
-            { label: "47 años de tradición" },
-            { label: "A tu ritmo, en línea" },
-            { label: "Título con validez nacional" },
-          ].map((b) => (
+          {data.trustBadges.map((b) => (
             <div
               key={b.label}
               className={`rounded-xl px-4 py-3.5 flex items-center gap-2.5 ${

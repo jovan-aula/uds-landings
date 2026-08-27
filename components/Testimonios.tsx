@@ -2,32 +2,13 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import type { TestimoniosData } from "@/types/landing";
 
-const testimonios = [
-  {
-    nombre: "Gabriela Torres",
-    rol: "Egresada · Licenciatura en Derecho",
-    cita: "Estudiar en línea me permitió combinar el trabajo con mi carrera. Hoy tengo mi cédula y ejerzo con orgullo.",
-    inicial: "G",
-    color: "bg-[#26529C]",
-  },
-  {
-    nombre: "Marco Ramírez",
-    rol: "Estudiante · 7° cuatrimestre",
-    cita: "La atención de los asesores es excelente. Siempre tuve acompañamiento en cada duda y cada trámite.",
-    inicial: "M",
-    color: "bg-[#173257]",
-  },
-  {
-    nombre: "Sofía Mendoza",
-    rol: "Egresada · Licenciatura en Derecho",
-    cita: "Lo mejor fue estudiar a mi ritmo sin descuidar mi trabajo. La plataforma es muy fácil de usar.",
-    inicial: "S",
-    color: "bg-[#A2C049]",
-  },
-];
+interface Props {
+  data: TestimoniosData
+}
 
-export default function Testimonios() {
+export default function Testimonios({ data }: Props) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -47,7 +28,7 @@ export default function Testimonios() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {testimonios.map((t, i) => (
+          {data.items.map((t, i) => (
             <motion.div
               key={t.nombre}
               initial={{ opacity: 0, y: 24 }}

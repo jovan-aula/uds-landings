@@ -2,10 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import type { PopupData } from "@/types/landing";
 
-const GHL_WEBHOOK_URL = process.env.NEXT_PUBLIC_GHL_WEBHOOK_DERECHO ?? "";
+interface Props {
+  data: PopupData
+  webhookUrl: string
+}
 
-export default function PopupBeca() {
+export default function PopupBeca({ data, webhookUrl }: Props) {
   const [visible, setVisible] = useState(false);
   const [form, setForm] = useState({ nombre: "", email: "", telefono: "" });
   const [estado, setEstado] = useState<"idle" | "enviando" | "ok">("idle");
@@ -22,10 +26,10 @@ export default function PopupBeca() {
     e.preventDefault();
     setEstado("enviando");
     try {
-      await fetch(GHL_WEBHOOK_URL, {
+      await fetch(webhookUrl, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, programa: "Licenciatura en Derecho", fuente: "popup-beca" }),
+        body: JSON.stringify({ ...form, programa: data.programa, fuente: "popup-beca" }),
       });
     } catch {
       // silencioso
@@ -73,21 +77,21 @@ export default function PopupBeca() {
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
                   </svg>
-                  BECAS DISPONIBLES · CICLO 2026
+                  BECAS DISPONIBLES · {data.ciclo}
                 </div>
 
                 <h2 className="text-white font-black text-lg sm:text-xl leading-tight">
-                  Estudia Derecho con hasta{" "}
-                  <span className="text-[#A2C049]">50% de beca</span>
+                  {data.h2Line1}{" "}
+                  <span className="text-[#A2C049]">{data.h2Highlight}</span>
                 </h2>
                 <p className="text-white/70 text-sm mt-1.5">
-                  Colegiaturas desde <strong className="text-white">$1,250 al mes</strong> · Título con validez nacional
+                  Colegiaturas desde <strong className="text-white">{data.precioDesde}</strong> · Título con validez nacional
                 </p>
 
                 <div className="flex items-center gap-2 mt-3 bg-white/10 rounded-lg px-3 py-2">
                   <span className="w-2 h-2 rounded-full bg-[#A2C049] animate-pulse shrink-0" />
                   <span className="text-white/90 text-xs font-medium">
-                    Cerramos inscripciones el <strong className="text-[#A2C049]">21 de septiembre</strong>
+                    Cerramos inscripciones el <strong className="text-[#A2C049]">{data.urgenciaFecha}</strong>
                   </span>
                 </div>
               </div>

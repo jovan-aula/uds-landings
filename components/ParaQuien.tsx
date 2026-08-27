@@ -3,23 +3,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import type { ParaQuienData } from "@/types/landing";
 
-const perfiles = [
-  {
-    titulo: "Recién egresados de bachillerato",
-    descripcion: "Que buscan una carrera con impacto social, estabilidad profesional y la flexibilidad de estudiar en línea.",
-  },
-  {
-    titulo: "Profesionistas en activo",
-    descripcion: "Que quieren formalizarse o cambiar de área con una carrera que se adapta a su horario de trabajo.",
-  },
-  {
-    titulo: "Personas comprometidas con la justicia",
-    descripcion: "Con pasión por defender derechos, interés en el bienestar social y vocación por las relaciones humanas.",
-  },
-];
+interface Props {
+  data: ParaQuienData
+}
 
-export default function ParaQuien() {
+export default function ParaQuien({ data }: Props) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -39,7 +29,7 @@ export default function ParaQuien() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {perfiles.map((p, i) => (
+          {data.perfiles.map((p, i) => (
             <motion.div
               key={p.titulo}
               initial={{ opacity: 0, y: 24 }}

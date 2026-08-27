@@ -3,35 +3,13 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import type { BeneficiosData } from "@/types/landing";
 
-const beneficios = [
-  {
-    num: "47",
-    unidad: "años",
-    titulo: "De experiencia educativa",
-    descripcion: "Una institución con trayectoria probada formando profesionistas de alto nivel en el sureste de México.",
-  },
-  {
-    num: "100%",
-    unidad: "",
-    titulo: "Virtual y flexible",
-    descripcion: "Estudia desde donde estés. Sin desplazamientos, sin horarios rígidos, sin sacrificar tu vida.",
-  },
-  {
-    num: "40+",
-    unidad: "programas",
-    titulo: "Oferta educativa amplia",
-    descripcion: "Licenciaturas, maestrías y doctorados. Una institución que crece contigo a lo largo de tu carrera.",
-  },
-  {
-    num: "100%",
-    unidad: "válido",
-    titulo: "Títulos con validez nacional",
-    descripcion: "Cédula profesional y título con reconocimiento oficial en toda la república mexicana.",
-  },
-];
+interface Props {
+  data: BeneficiosData
+}
 
-export default function Beneficios() {
+export default function Beneficios({ data }: Props) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
@@ -46,12 +24,12 @@ export default function Beneficios() {
         >
           <span className="text-[#A2C049] text-sm font-bold uppercase tracking-widest">Por qué UDS</span>
           <h2 className="text-3xl lg:text-4xl font-black text-white mt-2">
-            Una carrera que vale la pena
+            {data.titulo}
           </h2>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {beneficios.map((b, i) => (
+          {data.items.map((b, i) => (
             <motion.div
               key={b.titulo}
               initial={{ opacity: 0, y: 24 }}

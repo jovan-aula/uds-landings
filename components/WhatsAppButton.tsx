@@ -2,15 +2,17 @@
 
 import { motion } from "framer-motion";
 
-const WHATSAPP_NUMBER = "529631207866";
-const WHATSAPP_MESSAGE = encodeURIComponent(
-  "Hola, me interesa información sobre la Licenciatura en Derecho en línea de UDS."
-);
+interface Props {
+  number: string
+  mensaje: string
+}
 
-export default function WhatsAppButton() {
+export default function WhatsAppButton({ number, mensaje }: Props) {
+  const encodedMessage = encodeURIComponent(mensaje);
+
   return (
     <motion.a
-      href={`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`}
+      href={`https://wa.me/${number}?text=${encodedMessage}`}
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
