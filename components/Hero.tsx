@@ -50,7 +50,7 @@ export default function Hero({ data }: Props) {
                       <span className="block text-sm font-semibold text-[#173257]/50 uppercase tracking-widest mb-1">
                         {tipo} · en línea
                       </span>
-                      <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
+                      <span className="block text-3xl sm:text-4xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
                         {programa}
                       </span>
                     </>
@@ -64,14 +64,14 @@ export default function Hero({ data }: Props) {
                       <span className="block text-sm font-semibold text-[#173257]/50 uppercase tracking-widest mb-1">
                         {tipo} · en línea
                       </span>
-                      <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
+                      <span className="block text-3xl sm:text-4xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
                         {programa}
                       </span>
                     </>
                   );
                 }
                 return (
-                  <span className="block text-4xl sm:text-5xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
+                  <span className="block text-3xl sm:text-4xl lg:text-[3.25rem] font-black text-[#173257] leading-[1.05] mb-2">
                     {data.h1Line1}
                   </span>
                 );
@@ -115,7 +115,7 @@ export default function Hero({ data }: Props) {
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
-            className="relative flex items-end justify-center lg:justify-end h-[340px] lg:h-full"
+            className="relative flex items-end justify-center lg:justify-end h-[280px] sm:h-[340px] lg:h-full"
           >
             {/* Círculo grande azul de fondo */}
             <div className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full bg-[#26529C] opacity-[0.07] translate-x-1/3 translate-y-1/3 pointer-events-none z-0" />
@@ -127,7 +127,7 @@ export default function Hero({ data }: Props) {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.6, type: "spring" }}
-              className="absolute top-4 right-2 sm:top-12 sm:right-4 lg:right-0 z-10"
+              className="absolute top-2 right-1 sm:top-12 sm:right-4 lg:right-0 z-10"
             >
               <motion.div
                 animate={{ y: [0, -8, 0] }}
@@ -141,7 +141,7 @@ export default function Hero({ data }: Props) {
             </motion.div>
 
             {/* Estudiante sin fondo */}
-            <div className="relative w-[280px] sm:w-[340px] lg:w-[420px] h-[320px] sm:h-[420px] lg:h-[560px] z-[2]">
+            <div className="relative w-[240px] sm:w-[340px] lg:w-[420px] h-[260px] sm:h-[420px] lg:h-[560px] z-[2]">
               <Image
                 src={data.imageSrc}
                 alt={data.imageAlt}
