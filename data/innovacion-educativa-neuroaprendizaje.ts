@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const innovacionEducativaNeuroaprendizajeData: LandingData = {
-  slug: "innovacion-educativa-neuroaprendizaje-uds",
+  slug: "innovacion-educativa-neuroaprendizaje",
   meta: {
     title: "Doctorado en Innovación Educativa y Neuroaprendizaje | UDS Mi Universidad",
     description:
@@ -12,7 +12,7 @@ export const innovacionEducativaNeuroaprendizajeData: LandingData = {
       "doctorado educación virtual México",
       "doctorado neurociencia educativa",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/innovacion-educativa-neuroaprendizaje-uds",
+    ogUrl: "https://landing.uds.edu.mx/innovacion-educativa-neuroaprendizaje",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

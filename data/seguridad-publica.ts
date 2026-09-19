@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const seguridadPublicaData: LandingData = {
-  slug: "seguridad-publica-uds",
+  slug: "seguridad-publica",
   meta: {
     title: "Licenciatura en Seguridad Pública en Línea | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const seguridadPublicaData: LandingData = {
       "carrera de seguridad virtual",
       "criminología online México",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/seguridad-publica-uds",
+    ogUrl: "https://landing.uds.edu.mx/seguridad-publica",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

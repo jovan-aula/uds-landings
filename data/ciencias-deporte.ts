@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const cienciasDeporteData: LandingData = {
-  slug: "ciencias-deporte-uds",
+  slug: "ciencias-deporte",
   meta: {
     title: "Licenciatura en Ciencias del Deporte y Alto Rendimiento | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const cienciasDeporteData: LandingData = {
       "carrera de deporte virtual",
       "entrenamiento deportivo online México",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/ciencias-deporte-uds",
+    ogUrl: "https://landing.uds.edu.mx/ciencias-deporte",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

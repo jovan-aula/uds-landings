@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const docenciaCulturaFisicaData: LandingData = {
-  slug: "docencia-cultura-fisica-uds",
+  slug: "docencia-cultura-fisica",
   meta: {
     title: "Licenciatura en Docencia en Cultura Física y Entrenamiento Deportivo | UDS",
     description:
@@ -11,7 +11,7 @@ export const docenciaCulturaFisicaData: LandingData = {
       "licenciatura entrenamiento deportivo virtual",
       "educación física online México",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/docencia-cultura-fisica-uds",
+    ogUrl: "https://landing.uds.edu.mx/docencia-cultura-fisica",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const competenciasDigitalesData: LandingData = {
-  slug: "competencias-digitales-uds",
+  slug: "competencias-digitales",
   meta: {
     title: "Maestría en Educación Basada en Competencias Digitales | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const competenciasDigitalesData: LandingData = {
       "educación digital en línea",
       "tecnología educativa online México",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/competencias-digitales-uds",
+    ogUrl: "https://landing.uds.edu.mx/competencias-digitales",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

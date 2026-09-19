@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const contabilidadData: LandingData = {
-  slug: "contabilidad-uds",
+  slug: "contabilidad",
   meta: {
     title: "Licenciatura en Contabilidad Financiera en Línea | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const contabilidadData: LandingData = {
       "carrera de contabilidad virtual",
       "contador online México",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/contabilidad-uds",
+    ogUrl: "https://landing.uds.edu.mx/contabilidad",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

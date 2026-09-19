@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const ingenieriaIndustrialData: LandingData = {
-  slug: "ingenieria-industrial-uds",
+  slug: "ingenieria-industrial",
   meta: {
     title: "Licenciatura en Ingeniería Industrial y Logística en Línea | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const ingenieriaIndustrialData: LandingData = {
       "licenciatura en logística virtual",
       "ingeniería online México",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/ingenieria-industrial-uds",
+    ogUrl: "https://landing.uds.edu.mx/ingenieria-industrial",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

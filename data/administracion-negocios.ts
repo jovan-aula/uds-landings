@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const administracionNegociosData: LandingData = {
-  slug: "administracion-negocios-uds",
+  slug: "administracion-negocios",
   meta: {
     title: "Licenciatura en Administración y Negocios en Línea | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const administracionNegociosData: LandingData = {
       "carrera de negocios virtual",
       "administración de empresas online",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/administracion-negocios-uds",
+    ogUrl: "https://landing.uds.edu.mx/administracion-negocios",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

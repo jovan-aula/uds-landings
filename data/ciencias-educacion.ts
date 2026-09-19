@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const cienciasEducacionData: LandingData = {
-  slug: "ciencias-educacion-uds",
+  slug: "ciencias-educacion",
   meta: {
     title: "Licenciatura en Ciencias de la Educación en Línea | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const cienciasEducacionData: LandingData = {
       "carrera de educación virtual",
       "pedagogía online México",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/ciencias-educacion-uds",
+    ogUrl: "https://landing.uds.edu.mx/ciencias-educacion",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

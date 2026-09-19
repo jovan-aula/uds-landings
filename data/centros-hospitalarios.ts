@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const centrosHospitalariesData: LandingData = {
-  slug: "centros-hospitalarios-uds",
+  slug: "centros-hospitalarios",
   meta: {
     title: "Maestría en Administración de Centros Hospitalarios | UDS Mi Universidad",
     description:
@@ -11,7 +11,7 @@ export const centrosHospitalariesData: LandingData = {
       "gestión de centros de salud",
       "administración hospitalaria en línea",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/centros-hospitalarios-uds",
+    ogUrl: "https://landing.uds.edu.mx/centros-hospitalarios",
   },
   urgency: {
     fechaCierre: "21 de septiembre",

@@ -1,7 +1,7 @@
 import type { LandingData } from "@/types/landing";
 
 export const derechoData: LandingData = {
-  slug: "derecho-uds",
+  slug: "derecho",
   meta: {
     title: "Licenciatura en Derecho en Línea | UDS Mi Universidad",
     description:
@@ -13,7 +13,7 @@ export const derechoData: LandingData = {
       "derecho online título válido",
       "licenciatura en derecho modalidad virtual",
     ],
-    ogUrl: "https://demo.aulaconsultoria.mx/derecho-uds",
+    ogUrl: "https://landing.uds.edu.mx/derecho",
   },
   urgency: {
     fechaCierre: "21 de septiembre",
