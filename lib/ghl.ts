@@ -45,6 +45,37 @@ export async function getValoresCRM(): Promise<Record<string, string>> {
   }
 }
 
+type ValorCRM = { id: string; name: string; value: string };
+
+/** Lista sin caché (para el portal de edición). */
+export async function listarValoresCRM(): Promise<ValorCRM[] | null> {
+  const c = credenciales();
+  if (!c) return null;
+  const res = await fetch(`${API}/locations/${c.locationId}/customValues`, { headers: headers(c.token), cache: "no-store" });
+  if (!res.ok) return null;
+  const json = (await res.json()) as { customValues?: ValorCRM[] };
+  return json.customValues ?? [];
+}
+
+/** Crea o actualiza un Valor personalizado por nombre. Requiere locations/customValues.write */
+export async function guardarValorCRM(existentes: ValorCRM[], name: string, value: string): Promise<boolean> {
+  const c = credenciales();
+  if (!c) return false;
+  const actual = existentes.find(v => v.name.trim() === name);
+  if (actual && actual.value === value) return true;
+  const url = actual
+    ? `${API}/locations/${c.locationId}/customValues/${actual.id}`
+    : `${API}/locations/${c.locationId}/customValues`;
+  const res = await fetch(url, {
+    method: actual ? "PUT" : "POST",
+    headers: headers(c.token),
+    body: JSON.stringify({ name, value }),
+    cache: "no-store",
+  });
+  if (!res.ok) console.error("[portal] GHL", res.status, await res.text().catch(() => ""));
+  return res.ok;
+}
+
 export type Prospecto = {
   nombre: string;
   email: string;
