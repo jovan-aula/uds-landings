@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { seguridadPublicaData } from "@/data/seguridad-publica"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Seguridad Pública en Línea | UDS Mi Universidad",
@@ -21,7 +20,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function SeguridadPublicaPage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_SEGURIDAD_PUBLICA ?? ""
-  return <LandingPage data={seguridadPublicaData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="seguridad-publica" />
 }

@@ -14,10 +14,10 @@ export const contabilidadData: LandingData = {
     ogUrl: "https://landing.uds.edu.mx/contabilidad",
   },
   urgency: {
-    fechaCierre: "21 de septiembre",
+    fechaCierre: "",
   },
   hero: {
-    badge1: "RVOE Federal SEP · No. 20254217",
+    badge1: "RVOE Federal SEP · No. 20254219",
     badge2: "Licenciatura · 3 años · Virtual",
     h1Line1: "Estudia Contabilidad Financiera en línea",
     h1Line2: "sin dejar de trabajar.",
@@ -60,7 +60,7 @@ export const contabilidadData: LandingData = {
   planEstudios: {
     titulo: "3 años de formación contable y financiera",
     descripcion: "9 cuatrimestres · Modalidad no escolarizada",
-    rvoeLabel: "Programa con RVOE Federal SEP · Registro No. 20254217",
+    rvoeLabel: "Programa con RVOE Federal SEP · Registro No. 20254219",
     periodoLabel: "Cuatrimestre",
     cuatrimestres: [
       {
@@ -232,11 +232,11 @@ export const contabilidadData: LandingData = {
     urgenciaTexto: "Cerramos inscripciones el 21 de septiembre",
   },
   popup: {
-    ciclo: "CICLO 2026",
+    ciclo: "CICLO 2027",
     h2Line1: "Estudia Contabilidad Financiera con hasta",
     h2Highlight: "50% de beca",
     precioDesde: "$1,250 al mes",
-    urgenciaFecha: "21 de septiembre",
+    urgenciaFecha: "",
     programa: "Licenciatura en Contabilidad Financiera",
   },
   whatsapp: {

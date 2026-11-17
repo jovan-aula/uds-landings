@@ -3,18 +3,20 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import type { FormularioData } from "@/types/landing";
+import { enviarLead } from "@/lib/enviarLead";
 
 interface Props {
   data: FormularioData
-  webhookUrl: string
+  slug: string
 }
 
-export default function FormularioGHL({ data, webhookUrl }: Props) {
+export default function FormularioGHL({ data, slug }: Props) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const [form, setForm] = useState({ nombre: "", email: "", telefono: "" });
+  const [form, setForm] = useState({ nombre: "", email: "", telefono: "", empresa: "" });
   const [estado, setEstado] = useState<"idle" | "enviando" | "ok" | "error">("idle");
+  const [error, setError] = useState("");
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -22,16 +24,9 @@ export default function FormularioGHL({ data, webhookUrl }: Props) {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setEstado("enviando");
-    try {
-      await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, programa: data.programa }),
-      });
-      setEstado("ok");
-    } catch {
-      setEstado("error");
-    }
+    const r = await enviarLead(slug, form, "formulario");
+    if (r.ok) setEstado("ok");
+    else { setError(r.error); setEstado("error"); }
   };
 
   return (
@@ -133,6 +128,9 @@ export default function FormularioGHL({ data, webhookUrl }: Props) {
                   />
                 </div>
 
+                {/* Campo trampa anti-bots (oculto) */}
+                <input name="empresa" value={form.empresa} onChange={onChange} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+
                 <button
                   type="submit"
                   disabled={estado === "enviando"}
@@ -142,7 +140,7 @@ export default function FormularioGHL({ data, webhookUrl }: Props) {
                 </button>
 
                 {estado === "error" && (
-                  <p className="text-red-500 text-xs text-center">Hubo un error. Intenta de nuevo.</p>
+                  <p className="text-red-500 text-xs text-center">{error}</p>
                 )}
               </form>
             )}

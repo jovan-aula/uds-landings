@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { contabilidadData } from "@/data/contabilidad"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Contabilidad Financiera en Línea | UDS Mi Universidad",
@@ -9,10 +8,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Licenciatura en Contabilidad Financiera en Línea | UDS Mi Universidad",
     description: "Estudia Contabilidad Financiera en línea sin dejar de trabajar · 3 años · RVOE Federal SEP. Beca del 50%. Título y cédula con validez en toda la república.",
-    url: "https://demo.aulaconsultoria.mx/contabilidad-uds",
+    url: "https://landing.uds.edu.mx/contabilidad",
     siteName: "UDS Mi Universidad",
     locale: "es_MX",
     type: "website",
+    images: [{ url: "/hero-contabilidad.png", alt: "Licenciatura en Contabilidad Financiera · UDS" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -21,7 +21,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function ContabilidadPage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_CONTABILIDAD ?? ""
-  return <LandingPage data={contabilidadData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="contabilidad" />
 }

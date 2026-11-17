@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { competenciasDigitalesData } from "@/data/competencias-digitales"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Maestría en Educación Basada en Competencias Digitales | UDS Mi Universidad",
@@ -21,7 +20,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function CompetenciasDigitalesPage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_COMPETENCIAS_DIGITALES ?? ""
-  return <LandingPage data={competenciasDigitalesData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="competencias-digitales" />
 }

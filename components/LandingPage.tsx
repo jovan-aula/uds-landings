@@ -1,5 +1,6 @@
 "use client";
 
+import { MotionConfig } from "framer-motion";
 import type { LandingData } from "@/types/landing";
 import UrgencyBanner from "@/components/UrgencyBanner";
 import Navbar from "@/components/Navbar";
@@ -16,12 +17,12 @@ import PopupBeca from "@/components/PopupBeca";
 
 interface Props {
   data: LandingData
-  webhookUrl: string
+  slug: string
 }
 
-export default function LandingPage({ data, webhookUrl }: Props) {
+export default function LandingPage({ data, slug }: Props) {
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <UrgencyBanner fechaCierre={data.urgency.fechaCierre} />
       <Navbar />
       <main>
@@ -30,12 +31,12 @@ export default function LandingPage({ data, webhookUrl }: Props) {
         <PlanEstudios data={data.planEstudios} />
         <Beneficios data={data.beneficios} />
         <Testimonios data={data.testimonios} />
-        <FormularioGHL data={data.formulario} webhookUrl={webhookUrl} />
+        <FormularioGHL data={data.formulario} slug={slug} />
       </main>
       <Footer />
       <WhatsAppButton number={data.whatsapp.number} mensaje={data.whatsapp.mensaje} />
       <StickyMobileCTA />
-      <PopupBeca data={data.popup} webhookUrl={webhookUrl} />
-    </>
+      <PopupBeca data={data.popup} slug={slug} />
+    </MotionConfig>
   );
 }

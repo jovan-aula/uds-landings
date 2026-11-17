@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { cienciasDeporteData } from "@/data/ciencias-deporte"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Ciencias del Deporte y Alto Rendimiento | UDS Mi Universidad",
@@ -21,7 +20,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function CienciasDeportePage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_CIENCIAS_DEPORTE ?? ""
-  return <LandingPage data={cienciasDeporteData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="ciencias-deporte" />
 }

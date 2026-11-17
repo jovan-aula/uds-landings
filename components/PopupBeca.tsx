@@ -3,16 +3,18 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import type { PopupData } from "@/types/landing";
+import { enviarLead } from "@/lib/enviarLead";
 
 interface Props {
   data: PopupData
-  webhookUrl: string
+  slug: string
 }
 
-export default function PopupBeca({ data, webhookUrl }: Props) {
+export default function PopupBeca({ data, slug }: Props) {
   const [visible, setVisible] = useState(false);
   const [form, setForm] = useState({ nombre: "", email: "", telefono: "" });
   const [estado, setEstado] = useState<"idle" | "enviando" | "ok">("idle");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const timer = setTimeout(() => setVisible(true), 6000);
@@ -25,15 +27,9 @@ export default function PopupBeca({ data, webhookUrl }: Props) {
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setEstado("enviando");
-    try {
-      await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, programa: data.programa, fuente: "popup-beca" }),
-      });
-    } catch {
-      // silencioso
-    }
+    setError("");
+    const r = await enviarLead(slug, form, "popup-beca");
+    if (!r.ok) { setError(r.error); setEstado("idle"); return; }
     setEstado("ok");
     setTimeout(() => setVisible(false), 3000);
   };
@@ -101,7 +97,7 @@ export default function PopupBeca({ data, webhookUrl }: Props) {
                 <div className="flex items-center gap-2 mt-3 bg-white/10 rounded-lg px-3 py-2">
                   <span className="w-2 h-2 rounded-full bg-[#A2C049] animate-pulse shrink-0" />
                   <span className="text-white/90 text-xs font-medium">
-                    Cerramos inscripciones el <strong className="text-[#A2C049]">{data.urgenciaFecha}</strong>
+                    {data.urgenciaFecha ? <>Cerramos inscripciones el <strong className="text-[#A2C049]">{data.urgenciaFecha}</strong></> : <strong className="text-[#A2C049]">Inscripciones abiertas</strong>}
                   </span>
                 </div>
               </div>
@@ -158,6 +154,7 @@ export default function PopupBeca({ data, webhookUrl }: Props) {
                     >
                       {estado === "enviando" ? "Enviando..." : "Quiero conocer mi beca →"}
                     </button>
+                    {error && <p className="text-red-500 text-xs text-center">{error}</p>}
 
                     <button
                       type="button"

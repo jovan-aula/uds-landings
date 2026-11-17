@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { centrosHospitalariesData } from "@/data/centros-hospitalarios"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Maestría en Administración de Centros Hospitalarios | UDS Mi Universidad",
@@ -21,7 +20,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function CentrosHospitalariosPage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_CENTROS_HOSPITALARIOS ?? ""
-  return <LandingPage data={centrosHospitalariesData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="centros-hospitalarios" />
 }

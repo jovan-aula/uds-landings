@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { derechoData } from "@/data/derecho";
-import LandingPage from "@/components/LandingPage";
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: derechoData.meta.title,
@@ -23,7 +23,8 @@ export const metadata: Metadata = {
   },
 };
 
+export const revalidate = 300
+
 export default function DerechoPage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_DERECHO ?? "";
-  return <LandingPage data={derechoData} webhookUrl={webhookUrl} />;
+  return <LandingServer slug="derecho" />;
 }

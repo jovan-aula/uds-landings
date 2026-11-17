@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { innovacionEducativaNeuroaprendizajeData } from "@/data/innovacion-educativa-neuroaprendizaje"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Doctorado en Innovación Educativa y Neuroaprendizaje | UDS Mi Universidad",
@@ -22,7 +21,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function InnovacionEducativaNeuroaprendizajePage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_INNOVACION_EDUCATIVA ?? ""
-  return <LandingPage data={innovacionEducativaNeuroaprendizajeData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="innovacion-educativa-neuroaprendizaje" />
 }

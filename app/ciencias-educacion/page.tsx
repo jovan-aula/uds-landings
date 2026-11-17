@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { cienciasEducacionData } from "@/data/ciencias-educacion"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Ciencias de la Educación en Línea | UDS Mi Universidad",
@@ -21,7 +20,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function CienciasEducacionPage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_CIENCIAS_EDUCACION ?? ""
-  return <LandingPage data={cienciasEducacionData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="ciencias-educacion" />
 }

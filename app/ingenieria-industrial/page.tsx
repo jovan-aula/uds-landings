@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
-import LandingPage from "@/components/LandingPage"
-import { ingenieriaIndustrialData } from "@/data/ingenieria-industrial"
+import LandingServer from "@/components/LandingServer"
 
 export const metadata: Metadata = {
   title: "Licenciatura en Ingeniería Industrial y Logística en Línea | UDS Mi Universidad",
@@ -21,7 +20,8 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 300
+
 export default function IngenieriaIndustrialPage() {
-  const webhookUrl = process.env.NEXT_PUBLIC_GHL_WEBHOOK_INGENIERIA_INDUSTRIAL ?? ""
-  return <LandingPage data={ingenieriaIndustrialData} webhookUrl={webhookUrl} />
+  return <LandingServer slug="ingenieria-industrial" />
 }

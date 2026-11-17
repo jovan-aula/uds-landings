@@ -10,6 +10,7 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://landing.uds.edu.mx"),
   title: "UDS · Mi Universidad",
   description: "Formación con propósito, impacto que trasciende.",
   robots: {

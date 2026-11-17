@@ -9,8 +9,11 @@ export default function UrgencyBanner({ fechaCierre }: Props) {
     <div className="fixed top-0 left-0 right-0 z-[60] bg-[#173257] text-white text-center text-sm py-2.5 px-4 flex items-center justify-center gap-3">
       <span className="w-2 h-2 rounded-full bg-[#A2C049] animate-pulse shrink-0" />
       <span>
-        Cerramos inscripciones el{" "}
-        <strong className="text-[#A2C049]">{fechaCierre}</strong>
+        {fechaCierre ? (
+          <>Cerramos inscripciones el{" "}<strong className="text-[#A2C049]">{fechaCierre}</strong></>
+        ) : (
+          <strong className="text-[#A2C049]">Inscripciones abiertas</strong>
+        )}
         <span className="hidden sm:inline"> · Aún estás a tiempo de estudiar en línea, a tu ritmo</span>
       </span>
       <a
