@@ -8,8 +8,14 @@ import { entrar, guardar, salir } from "./actions";
 export const metadata: Metadata = { title: "Portal de landings · UDS", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
 
-// Programas habilitados en el portal (demo: solo Contabilidad)
-const HABILITADOS = ["contabilidad"];
+// Todas las landings publicadas, agrupadas por campus para el selector
+const HABILITADOS = Object.keys(landings);
+const CAMPUS: Record<string, string> = {
+  negocios: "Negocios, Innovación y Gestión",
+  "derecho-seguridad": "Derecho, Seguridad y Sociedad",
+  "educacion-tecnologia": "Educación, Creatividad y Tecnología",
+  car: "Centro de Alto Rendimiento (CAR)",
+};
 
 const ERRORES: Record<string, string> = {
   acceso: "Contraseña incorrecta.",
@@ -76,7 +82,26 @@ export default async function Portal({ searchParams }: { searchParams: Promise<R
   return (
     <div className="min-h-screen bg-[#EAF1FB]">
       {Cabecera}
-      <main className="max-w-2xl mx-auto px-6 py-12">
+      <div className="max-w-5xl mx-auto px-6 py-10 grid md:grid-cols-[260px_1fr] gap-10">
+      <nav aria-label="Landings" className="md:pt-1">
+        {Object.entries(CAMPUS).map(([clave, nombre]) => {
+          const items = HABILITADOS.filter(k => landings[k].crm.campus === clave);
+          if (!items.length) return null;
+          return (
+            <div key={clave} className="mb-6">
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#222B3A]/45 mb-2">{nombre}</p>
+              {items.map(k => (
+                <a key={k} href={`/portal?p=${k}`} aria-current={k === slug ? "page" : undefined}
+                  className={`block py-1.5 text-sm border-l-2 pl-3 ${k === slug ? "font-bold" : "text-[#222B3A]/75 border-transparent hover:text-[#173257]"}`}
+                  style={k === slug ? { color: NAVY, borderColor: VERDE } : undefined}>
+                  {landings[k].crm.nombreCRM}
+                </a>
+              ))}
+            </div>
+          );
+        })}
+      </nav>
+      <main>
         <p className="text-xs font-bold uppercase tracking-[0.18em]" style={{ color: VERDE }}>Editando</p>
         <h1 className="text-3xl font-black mt-1" style={{ color: NAVY }}>{landing.formulario.programa}</h1>
         <p className="text-sm text-[#222B3A]/70 mt-2">
@@ -108,6 +133,7 @@ export default async function Portal({ searchParams }: { searchParams: Promise<R
           <button className="text-xs text-[#222B3A]/50 underline">Cerrar sesión</button>
         </form>
       </main>
+      </div>
     </div>
   );
 }
