@@ -141,7 +141,7 @@ export async function crearOportunidad(contactId: string, nombre: string, fuente
 }
 
 /** Crea o actualiza el contacto en el CRM con sus etiquetas de programa, campus y turno. */
-export async function registrarProspecto(p: Prospecto): Promise<{ ok: boolean; status: number; contactId?: string }> {
+export async function registrarProspecto(p: Prospecto): Promise<{ ok: boolean; status: number; contactId?: string; nuevo?: boolean }> {
   const c = credenciales();
   if (!c) return { ok: false, status: 503 };
   const [firstName, ...resto] = p.nombre.trim().split(/\s+/);
@@ -155,12 +155,25 @@ export async function registrarProspecto(p: Prospecto): Promise<{ ok: boolean; s
       name: p.nombre.trim(),
       email: p.email.trim().toLowerCase(),
       phone: p.telefono,
-      tags: p.tags,
       source: p.fuente,
     }),
     cache: "no-store",
   });
-  if (!res.ok) return { ok: false, status: res.status };
-  const j = (await res.json().catch(() => ({}))) as { contact?: { id?: string } };
-  return { ok: true, status: res.status, contactId: j.contact?.id };
+  if (!res.ok) {
+    console.error("[lead] upsert", res.status, (await res.text().catch(() => "")).slice(0, 200));
+    return { ok: false, status: res.status };
+  }
+  const j = (await res.json().catch(() => ({}))) as { contact?: { id?: string }; new?: boolean };
+  const contactId = j.contact?.id;
+  // Las etiquetas se AGREGAN (no reemplazan las que ya tenga un contacto existente)
+  if (contactId && p.tags.length) {
+    const t = await fetch(`${API}/contacts/${contactId}/tags`, {
+      method: "POST",
+      headers: headers(c.token),
+      body: JSON.stringify({ tags: p.tags }),
+      cache: "no-store",
+    });
+    if (!t.ok) console.error("[lead] etiquetas", t.status, (await t.text().catch(() => "")).slice(0, 200));
+  }
+  return { ok: true, status: res.status, contactId, nuevo: j.new };
 }

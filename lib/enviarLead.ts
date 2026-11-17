@@ -1,7 +1,7 @@
 // Envía el prospecto a /api/lead (el servidor lo registra en el CRM con sus etiquetas).
 export async function enviarLead(
   slug: string,
-  form: { nombre: string; email: string; telefono: string; empresa?: string },
+  form: { nombre: string; email: string; telefono: string; _gotcha?: string },
   fuente: "formulario" | "popup-beca",
 ): Promise<{ ok: true } | { ok: false; error: string }> {
   const q = typeof window !== "undefined" ? new URLSearchParams(window.location.search) : null;

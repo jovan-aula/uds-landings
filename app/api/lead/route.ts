@@ -17,7 +17,10 @@ export async function POST(req: Request) {
   }
 
   // Campo trampa contra bots: si viene lleno, se responde ok sin registrar
-  if (typeof body.empresa === "string" && body.empresa) return NextResponse.json({ ok: true });
+  if (typeof body._gotcha === "string" && body._gotcha) {
+    console.warn("[lead] descartado por campo trampa", { slug: body.slug });
+    return NextResponse.json({ ok: true });
+  }
 
   const slug = String(body.slug ?? "");
   const landing = landings[slug];
@@ -25,8 +28,10 @@ export async function POST(req: Request) {
   const email = String(body.email ?? "").trim();
   const telefono = telefonoMX(String(body.telefono ?? ""));
 
+  if (!landing) console.warn("[lead] programa no encontrado", { slug });
   if (!landing) return NextResponse.json({ error: "Programa no encontrado" }, { status: 400 });
   if (nombre.length < 3 || !/^\S+@\S+\.\S+$/.test(email) || !telefono) {
+    console.warn("[lead] datos inválidos", { slug });
     return NextResponse.json({ error: "Revisa tu nombre, correo y WhatsApp (10 dígitos)." }, { status: 422 });
   }
 
@@ -55,5 +60,6 @@ export async function POST(req: Request) {
     ? await crearOportunidad(r.contactId, `${nombre} · ${crm.nombreCRM} (${crm.campus}, ${crm.turno})`, origen)
     : false;
 
+  console.info("[lead] registrado", { slug, fuente, contacto: r.contactId ? (r.nuevo === false ? "existente-actualizado" : "nuevo") : "sin id", oportunidad });
   return NextResponse.json({ ok: true, oportunidad });
 }

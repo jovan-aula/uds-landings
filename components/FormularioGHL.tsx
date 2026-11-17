@@ -14,7 +14,7 @@ export default function FormularioGHL({ data, slug }: Props) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
-  const [form, setForm] = useState({ nombre: "", email: "", telefono: "", empresa: "" });
+  const [form, setForm] = useState({ nombre: "", email: "", telefono: "", _gotcha: "" });
   const [estado, setEstado] = useState<"idle" | "enviando" | "ok" | "error">("idle");
   const [error, setError] = useState("");
 
@@ -129,7 +129,7 @@ export default function FormularioGHL({ data, slug }: Props) {
                 </div>
 
                 {/* Campo trampa anti-bots (oculto) */}
-                <input name="empresa" value={form.empresa} onChange={onChange} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
+                <input name="_gotcha" value={form._gotcha} onChange={onChange} tabIndex={-1} autoComplete="new-password" aria-hidden="true" className="hidden" />
 
                 <button
                   type="submit"
