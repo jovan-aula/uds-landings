@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { landings } from "@/data/landings";
-import { listarValoresCRM } from "@/lib/ghl";
+import { buscarEmbudo, listarValoresCRM } from "@/lib/ghl";
 import { sesionValida } from "@/lib/portal-auth";
 import { entrar, guardar, salir } from "./actions";
 
@@ -55,7 +55,8 @@ export default async function Portal({ searchParams }: { searchParams: Promise<R
     );
   }
 
-  const valores = (await listarValoresCRM()) ?? [];
+  const [valoresCRM, embudo] = await Promise.all([listarValoresCRM(), buscarEmbudo()]);
+  const valores = valoresCRM ?? [];
   const v = (n: string) => valores.find(x => x.name.trim() === n)?.value ?? "";
   const pre = `UDS · ${landing.crm.nombreCRM} · `;
   const actual = {
@@ -97,6 +98,11 @@ export default async function Portal({ searchParams }: { searchParams: Promise<R
           ))}
           <button className="w-full text-white font-bold py-4 rounded-full" style={{ background: AZUL }}>Guardar cambios</button>
         </form>
+
+        <div className="mt-6 text-xs text-[#222B3A]/60 space-y-1">
+          <p>Conexión CRM: {valoresCRM ? "✓ activa" : "✗ sin acceso a Valores personalizados"}</p>
+          <p>Oportunidades: {embudo ? `✓ embudo «${embudo.nombre}», etapa «${embudo.etapa}»` : "✗ sin acceso a embudos (falta permiso o no hay embudo)"}</p>
+        </div>
 
         <form action={salir} className="mt-6 text-center">
           <button className="text-xs text-[#222B3A]/50 underline">Cerrar sesión</button>

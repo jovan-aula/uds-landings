@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { registrarProspecto } from "@/lib/ghl";
+import { crearOportunidad, registrarProspecto } from "@/lib/ghl";
 import { landings } from "@/data/landings";
 
 // Normaliza a formato internacional MX (+52 + 10 dígitos)
@@ -43,10 +43,17 @@ export async function POST(req: Request) {
     ...(utm ? [`uds-campana-${utm.toLowerCase().replace(/[^a-z0-9-]+/g, "-")}`] : []),
   ];
 
-  const r = await registrarProspecto({ nombre, email, telefono, tags, fuente: `Landing UDS · ${landing.formulario.programa}` });
+  const origen = `Landing UDS · ${landing.formulario.programa}`;
+  const r = await registrarProspecto({ nombre, email, telefono, tags, fuente: origen });
   if (!r.ok) {
     console.error("[lead] CRM respondió", r.status);
     return NextResponse.json({ error: "No pudimos registrar tu solicitud. Intenta de nuevo o escríbenos por WhatsApp." }, { status: 502 });
   }
-  return NextResponse.json({ ok: true });
+
+  // Oportunidad en el embudo de Admisiones. Si falla, el contacto ya quedó registrado.
+  const oportunidad = r.contactId
+    ? await crearOportunidad(r.contactId, `${nombre} · ${crm.nombreCRM} (${crm.campus}, ${crm.turno})`, origen)
+    : false;
+
+  return NextResponse.json({ ok: true, oportunidad });
 }
